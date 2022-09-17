@@ -1,0 +1,39 @@
+{
+  "name": "pagseguro-pix",
+  "version": "1.0.9",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "author": "Rev3rs1d",
+  "scripts": {
+    "build": "tsc --skipLibCheck && tsc-alias"
+  },
+  "description": "Unofficial library of pagseguro's pix API",
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-no-floating-promise": "^1.0.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "tsc-alias": "^1.6.3",
+    "typescript": "^4.5.5"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "pagseguro",
+    "pix"
+  ],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "axios": "^0.26.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "typescript": "^4.4.4"
+  }
+}

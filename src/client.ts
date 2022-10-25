@@ -267,7 +267,7 @@ export type FullCharge = {
 /**
  * Partial charge object
  */
-type PartialCharge = Omit<FullCharge, 'pix'>
+export type PartialCharge = Omit<FullCharge, 'pix'>
 
 /**
  * Create charge parameters

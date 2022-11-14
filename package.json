@@ -4,6 +4,10 @@
   "main": "./dist/index.js",
   "license": "MIT",
   "author": "Rev3rs1d",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rev3rs1d/pagseguro-pix"
+  },
   "scripts": {
     "build": "tsc --skipLibCheck && tsc-alias"
   },

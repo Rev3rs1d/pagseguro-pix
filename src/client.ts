@@ -6,7 +6,7 @@ import https from 'https'
 /**
  * Pagseguro Credentials
  */
-type PagseguroAuthCrendetials = {
+export type PagseguroAuthCrendetials = {
   /**
    * Caminho do certficado`key`
    */
@@ -25,7 +25,7 @@ type PagseguroAuthCrendetials = {
   readonly clientSecret: string
 }
 
-type Oauth2Params = {
+export type Oauth2Params = {
   grant_type: string
   scope: string
 }
@@ -48,7 +48,7 @@ type Oauth2Params = {
  * `payloadlocation.read`	- Permissão para consulta de payloads
  *
  */
-type OauthScopes =
+export type OauthScopes =
   | 'pix.read'
   | 'pix.write'
   | 'cob.read'
@@ -272,7 +272,7 @@ export type PartialCharge = Omit<FullCharge, 'pix'>
 /**
  * Create charge parameters
  */
-type CreateChargeParams = Omit<
+export type CreateChargeParams = Omit<
   PartialCharge,
   | 'revisao'
   | 'status'
@@ -285,7 +285,7 @@ type CreateChargeParams = Omit<
 /**
  * Cancell/Revise charge parameters
  */
-type ReviseChargeParams = Omit<
+export type ReviseChargeParams = Omit<
   Partial<PartialCharge>,
   | 'revisao'
   | 'location'
@@ -300,7 +300,7 @@ type ReviseChargeParams = Omit<
 /**
  * Dates for filter list or charges
  */
-type QueryParams = {
+export type QueryParams = {
   txid?: FullCharge['txid']
 
   /**
@@ -333,35 +333,38 @@ type QueryParams = {
 /**
  * Refund charge request params
  */
-type RefundChargeParams = Pick<PixReceivedInfo, 'endToEndId' | 'valor'> &
+export type RefundChargeParams = Pick<PixReceivedInfo, 'endToEndId' | 'valor'> &
   Pick<ChargeBack, 'id'>
 
 /**
  * Get Refund request params
  */
-type GetRefundParams = Pick<PixReceivedInfo, 'endToEndId'> &
+export type GetRefundParams = Pick<PixReceivedInfo, 'endToEndId'> &
   Pick<ChargeBack, 'id'>
 
 /**
  * Charge refund response
  */
-type RefundChargeResponse = Partial<Omit<ChargeBack, 'motivo'>>
+export type RefundChargeResponse = Partial<Omit<ChargeBack, 'motivo'>>
 
 /**
  * Get received pix list params
  */
-type GetReceivedPixListParams = Omit<QueryParams, 'status' | 'txid' | 'nome'>
+export type GetReceivedPixListParams = Omit<
+  QueryParams,
+  'status' | 'txid' | 'nome'
+>
 
 /**
  * Get charge list params
  */
-type GetChargeListParams = Omit<QueryParams, 'nome'>
+export type GetChargeListParams = Omit<QueryParams, 'nome'>
 
 /**
  * Get received pix list response
  */
 
-type GetReceivedPixListResponse<
+export type GetReceivedPixListResponse<
   QueryArgument extends GetReceivedPixListParams
 > = {
   parametros: {
@@ -378,7 +381,7 @@ type GetReceivedPixListResponse<
 /**
  * Webhook details
  */
-type WebhookDetails = {
+export type WebhookDetails = {
   webhookUrl: string
   chave: string
   criacao: string
@@ -386,7 +389,7 @@ type WebhookDetails = {
 /**
  * Api client options
  */
-type ApiClientConfigs = {
+export type ApiClientConfigs = {
   credentials: PagseguroAuthCrendetials
 
   /**
@@ -399,7 +402,7 @@ type ApiClientConfigs = {
 /**
  * Pagseguro Oauth2 response
  */
-type Oauth2Response = {
+export type Oauth2Response = {
   access_token: string
   token_type: string
   expires_in: number
